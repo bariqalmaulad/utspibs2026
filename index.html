@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Mahasiswa UPJ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+          <svg class="foto foto-kecil" viewBox="0 0 100 100" role="img" aria-label="Foto profil dummy">
+        <rect width="100" height="100" fill="#e0e0e0"/>
+        <circle cx="50" cy="38" r="18" fill="#9e9e9e"/>
+        <path d="M14 100c0-22 16-36 36-36s36 14 36 36z" fill="#9e9e9e"/>
+      </svg>
+      <div class="logo" aria-hidden="true"></div>
+      <h1>Profil Mahasiswa</h1>
+    </header>
+
+    <nav aria-label="Menu profil">
+      <ul>
+        <li><a href="#biodata" data-target="biodata" class="aktif">Biodata</a></li>
+        <li><a href="#pendidikan" data-target="pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman" data-target="pengalaman">Pengalaman</a></li>
+        <li><a href="#keahlian" data-target="keahlian">Keahlian</a></li>
+        <li><a href="#prestasi" data-target="prestasi">Prestasi</a></li>
+      </ul>
+    </nav>
+
+    <section id="konten">
+      <article id="biodata" class="panel tampil">
+        <h2>Biodata</h2>
+        <table>
+          <tr><th>NIM</th><td>: 2025081002</td></tr>
+          <tr><th>Nama</th><td>: Cristiano Ronaldo</td></tr>
+          <tr><th>Agama</th><td>: Islam</td></tr>
+          <tr><th>Tanggal Lahir</th><td>: 1 Januari 2000</td></tr>
+          <tr><th>Tempat Lahir</th><td>: Jakarta</td></tr>
+          <tr><th>Program Studi</th><td>: Sistem Informasi</td></tr>
+        </table>
+      </article>
+
+      <article id="pendidikan" class="panel">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li><strong>2022 - 2025</strong> — SMA ABCD</li>
+          <li><strong>2025 - sekarang</strong> — S1 Sistem Informasi, Universitas Pembangunan Jaya</li>
+        </ul>
+      </article>
+
+      <article id="pengalaman" class="panel">
+        <h2>Pengalaman</h2>
+        <ul>
+          <li><strong>2025</strong> — Panitia Concordia</li>
+          <li><strong>2026</strong> — Divisi Kesehatan Prodi Gathering</li>
+          <li><strong>2026</strong> — Divisi Kesehatan Makrab 2026</li>
+        </ul>
+      </article>
+
+      <article id="keahlian" class="panel">
+        <h2>Keahlian</h2>
+        <ul>
+          <li>HTML, CSS, dan JavaScript</li>
+          <li>Desain web responsive</li>
+          <li>Basis data MySQL</li>
+          <li>Git dan GitHub</li>
+        </ul>
+      </article>
+
+      <article id="prestasi" class="panel">
+        <h2>Prestasi</h2>
+        <ul>
+          <li>Juara 2 Lomba Desain Web Tingkat Kampus (2026)</li>
+          <li>Penerima Beasiswa Prestasi Akademik (2026)</li>
+        </ul>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Hobi</h3>
+      <ul>
+        <li>Sepak Bola</li>
+        <li>Musik</li>
+        <li>Film</li>
+      </ul>
+    </aside>
+
+    <footer>
+      <address>
+        GitHUb: @bariqalmaulad<br>
+        Instagram: @bariqalmaulad
+      </address>
+      <p class="copy">&copy; Copyright 2026. All Rights Reserved</p>
+      <p class="web"><strong>Data Mahasiswa</strong><br>Universitas Pembangunan Jaya</p>
+    </footer>
+
+  </div>
+
+  <script>
+    var links = document.querySelectorAll('nav a');
+    var panels = document.querySelectorAll('.panel');
+
+    function tampilkan(id) {
+      panels.forEach(function (p) { p.classList.toggle('tampil', p.id === id); });
+      links.forEach(function (a) { a.classList.toggle('aktif', a.dataset.target === id); });
+    }
+
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        tampilkan(a.dataset.target);
+      });
+    });
+  </script>
+</body>
+</html>
